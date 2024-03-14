@@ -12,7 +12,7 @@ export function Layout ( { children } : ILayoutProps) {
       <Box
         component="main"
         sx={{
-          mt:6.5,
+          mt:8,
           backgroundColor: colors.transparent,
           minWidth: `100vw`,
           maxWidth: `100vw`,
@@ -20,7 +20,8 @@ export function Layout ( { children } : ILayoutProps) {
           maxHeight:"94vh",
           flexDirection: "column",
           justifyContent: "flex-start",
-          boxShadow: 0
+          boxShadow: 0,
+          overflow: "auto"
         }}
       >
           {children}

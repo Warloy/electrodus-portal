@@ -8,17 +8,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { Provider } from "react-redux";
 import { store } from "./store/store"
 /* Pages */
-import Login from './pages/Login';
-import RegisterPage from "./pages/RegisterPage";
-import ForgotPasswordPage from "./pages/ForgotPasswordPage";
-import RequestsPage from "./pages/RequestsPage";
-import TicketsPage from "./pages/TicketsPage";
 import HomePage from "./pages/HomePage";
-import ServicesPage from "./pages/ServicesPage";
-import HardwarePage from "./pages/HardwarePage";
-import PersonnelPage from "./pages/PersonnelPage";
-import SettingsPage from "./pages/SettingsPage";
-import ProfilePage from "./pages/ProfilePage";
 /* Assets */
 import { colors } from "./constants/Colors";
 import './App.css'
@@ -46,17 +36,7 @@ function App() {
               <Layout>
                 <CssBaseline/>
                 <Routes>
-                    <Route path="/login" element={<Login/>}/>
-                    <Route path="/register" element={<RegisterPage/>}/>
-                    <Route path="/recover" element={<ForgotPasswordPage/>}/>
                     <Route path="/" element={<HomePage/>}/>
-                    <Route path="/solicitudes" element={<RequestsPage/>}/>
-                    <Route path="/tickets" element={<TicketsPage/>}/>
-                    <Route path="/servicios" element={<ServicesPage/>}/>
-                    <Route path="/equipos" element={<HardwarePage/>}/>
-                    <Route path="/personal" element={<PersonnelPage/>}/>
-                    <Route path="/configuracion" element={<SettingsPage/>}/>
-                    <Route path="/perfil" element={<ProfilePage/>}/>
                     <Route path="*" element={<Navigate to={"/"}/>}/>
                 </Routes>
               </Layout>

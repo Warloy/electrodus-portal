@@ -1,132 +1,65 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AppBar, Badge, Box, IconButton, Toolbar, Typography, alpha, styled, InputBase, Menu, MenuItem } from "@mui/material";
-import useAuthContext from "../hooks/useAuthContext";
-import { useAppDispatch } from "../hooks/useRedux";
-import { logout } from "../features/user/userSlice";
-import { setSession } from "../services/jwt";
-
+import { AppBar, Box, IconButton, Toolbar, Typography, Menu, MenuItem, Button } from "@mui/material";
 import { INavBarProps } from "../interfaces/NavBar.Interface";
-
 import { colors } from "../constants/Colors";
 /* Icons */
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
+import HardwareIcon from '@mui/icons-material/Hardware';
+import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
+import RedeemIcon from '@mui/icons-material/Redeem';
+import InfoIcon from '@mui/icons-material/Info';
+import KeyIcon from '@mui/icons-material/Key';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import DashboardIcon from '@mui/icons-material/Dashboard';
  
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
-    width: 'auto',
-  },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-}));
-
 
 export function NavBar( { hidden = false } : INavBarProps) {
-  const navigate = useNavigate();
-  const { dispatch } = useAuthContext();
-  const appDispatch = useAppDispatch();
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     useState<null | HTMLElement>(null);
-
-  const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
   };
 
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const handleProfileButton = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-    navigate("/perfil");
-  }
-
-  const handleLogout = () => {
-    console.log("Logout button pressed");
-    setAnchorEl(null);
-    handleMobileMenuClose();
-    appDispatch(logout());
-    dispatch({ type: "LOGOUT" });
-    setSession(null);
-    navigate("/login");
+  const handleHomeButton = () => {
+    console.log("Home button pressed")
+    const scroll = document.querySelector("#home-section")
+    scroll?.scrollIntoView({ behavior: "smooth", block: "start" })
   };
 
-  const menuId = 'primary-search-account-menu';
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleProfileButton}>
-        Ver perfil
-      </MenuItem>
-      <MenuItem onClick={handleLogout}>
-        Cerrar sesión
-      </MenuItem>
-    </Menu>
-  );
+  const handleHarwareButton = () => {
+    console.log("Hardware section button pressed")
+    const scroll = document.querySelector("#hardware-section")
+    scroll?.scrollIntoView({ behavior: "smooth", block: "start" })
+  };
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const handleServicesButton = () => {
+    console.log("Services section button pressed")
+    const scroll = document.querySelector("#services-section")
+    scroll?.scrollIntoView({ behavior: "smooth", block: "start" })
+  };
+
+  const handleLoginButton = () => {
+    location.href="http://youtube.com"
+  };
+
+  const handlePromotionsButton = () => {
+    console.log("Promotions section button pressed")
+    const scroll = document.querySelector("#promotions-section")
+    scroll?.scrollIntoView({ behavior: "smooth", block: "start" })
+  };
+
+  const handleContactButton = () => {
+    console.log("Contact section button pressed")
+    const scroll = document.querySelector("#contact-section")
+    scroll?.scrollIntoView({ behavior: "smooth", block: "start" })
+  };
+
+  const mobileMenuId = 'menu-mobile';
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
@@ -143,29 +76,100 @@ export function NavBar( { hidden = false } : INavBarProps) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
+      <MenuItem
+        onClick = {() => { handleHarwareButton() 
+          handleMobileMenuClose()
+        }}
+      >
         <IconButton
           size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
+          aria-label="Sección de equipos"
         >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
+          <HardwareIcon sx={{ color: colors.primary }} />
         </IconButton>
-        <p>Notificaciones</p>
+        <Typography
+          color={colors.primary}
+          sx = {{ mr: 2 }}
+        >
+          Equipos
+        </Typography>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+
+      <MenuItem
+        onClick = {() => { handleServicesButton() 
+          handleMobileMenuClose()
+        }}
+      >
         <IconButton
           size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
+          aria-label="Sección de servicios"
         >
-          <AccountCircle />
+          <HomeRepairServiceIcon sx={{ color: colors.primary }} />
         </IconButton>
-        <p>Perfil</p>
+        <Typography
+          color={colors.primary}
+          sx = {{ mr: 2 }}
+        >
+          Servicios
+        </Typography>
+      </MenuItem>
+
+      <MenuItem
+        onClick = {() => { handlePromotionsButton() 
+          handleMobileMenuClose()
+        }}
+      >
+        <IconButton
+          size="large"
+          aria-label="Sección de promociones"
+        >
+          <RedeemIcon sx={{ color: colors.primary }} />
+        </IconButton>
+        <Typography
+          color={colors.primary}
+          sx = {{ mr: 2 }}
+        >
+          Promociones
+        </Typography>
+      </MenuItem>
+
+      <MenuItem
+        onClick = {() => { handleContactButton() 
+          handleMobileMenuClose()
+        }}
+      >
+        <IconButton
+          size="large"
+          aria-label="Sección de contacto"
+        >
+          <InfoIcon sx={{ color: colors.primary }} />
+        </IconButton>
+        <Typography
+          color={colors.primary}
+          sx = {{ mr: 2 }}
+        >
+          Contacto
+        </Typography>
+      </MenuItem>
+
+      
+      <MenuItem
+        onClick = {() => { handleLoginButton() 
+          handleMobileMenuClose()
+        }}
+      >
+        <IconButton
+          size="large"
+          aria-label="Iniciar sesión"
+        >
+          <KeyIcon sx={{ color: colors.primary }} />
+        </IconButton>
+        <Typography
+          color={colors.primary}
+          sx = {{ mr: 2 }}
+        >
+          Iniciar sesión
+        </Typography>
       </MenuItem>
     </Menu>
   );
@@ -177,7 +181,7 @@ export function NavBar( { hidden = false } : INavBarProps) {
         <AppBar position="fixed" enableColorOnDark sx={{ 
           backgroundColor: colors.primary,
           width: `100%`,
-          ml: "240px"
+          boxShadow: 0
           }}>
         <Toolbar
           variant="dense"
@@ -185,51 +189,115 @@ export function NavBar( { hidden = false } : INavBarProps) {
             pr: '24px', // keep right padding when drawer closed
           }}
         >
-          
-          <Box sx={{ flexGrow: 1, pr: 1}}>
-          <Search
-            sx={{ width: { xs: "100%", md: "80%", lg: "70%" }, maxWidth: "300px"}}
+          <Box 
+            sx={{ px: 1, 
+            justifyContent:"space-between", 
+            display: "flex", 
+            alignItems: "center",
+            maxWidth: [360]
+          }}
           >
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              
-              placeholder="Buscar"
-              inputProps={{ 'aria-label': 'search' }}
-              sx={{ flexGrow: 1 }}
-            />
-          </Search>
+            <Button variant="text" onClick={()=>{handleHomeButton()}}>
+              <DashboardIcon 
+                sx={{ width:36, height:36, color: colors.quaternary}}
+              />
+              <Typography
+                component="h1"
+                variant="h6"
+                fontWeight="bold"
+                lineHeight={1}
+                noWrap
+                sx={{ color: colors.quaternary, ml: 1 }}
+              >
+                Prometheus Solutions
+              </Typography>
+            </Button>
           </Box>
-          <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton
-                size="large"
-                aria-label="show 17 new notifications"
-                color="inherit"
-                onClick={()=>{}}
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
             <IconButton
               size="large"
               edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              aria-label="Hardware section button"
               color="inherit"
               sx = {{
                 borderRadius: 1
               }}
+              onClick={()=>{handleHarwareButton()}}
             >
-              <AccountCircle />
               <Typography
-                sx={{ pl: 1, pr: 2 }}
+                sx={{ px: 1 }}
               >
-                Juan Kaslana
+                Equipos
+              </Typography>
+            </IconButton>
+            
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="Services section button"
+              color="inherit"
+              sx = {{
+                borderRadius: 1
+              }}
+              onClick={()=>{handleServicesButton()}}
+            >
+              <Typography
+                sx={{ px: 1 }}
+              >
+                Servicios
+              </Typography>
+            </IconButton>
+            
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="Promotions section button"
+              color="inherit"
+              sx = {{
+                borderRadius: 1
+              }}
+              onClick={()=>{handlePromotionsButton()}}
+            >
+              <Typography
+                sx={{ px: 1 }}
+              >
+                Promociones
+              </Typography>
+            </IconButton>
+            
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="Contact section button"
+              color="inherit"
+              sx = {{
+                borderRadius: 1
+              }}
+              onClick={()=>{handleContactButton()}}
+            >
+              <Typography
+                sx={{ px: 1 }}
+              >
+                Contacto
+              </Typography>
+            </IconButton>
+          </Box>
+          <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="login button"
+              color="inherit"
+              sx = {{
+                borderRadius: 1
+              }}
+              onClick={()=>{ handleLoginButton() }}
+            >
+              <Typography
+                sx={{ px: 1 }}
+              >
+                Iniciar sesión
               </Typography>
             </IconButton>
           </Box>
@@ -248,7 +316,6 @@ export function NavBar( { hidden = false } : INavBarProps) {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
       </>
       }
     </Box>
