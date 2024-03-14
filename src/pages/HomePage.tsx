@@ -3,6 +3,7 @@ import { Typography,
   Box} from '@mui/material';
 import { colors } from '../constants/Colors';
 import LoginForm from '../components/LoginComponents/LoginForm';
+import HomeSection from '../components/SectionComponents/HomeSection';
 
 export default function HomePage() {
 
@@ -22,33 +23,7 @@ export default function HomePage() {
       overflow="hidden"
     >
       <div id="home-section">
-        <Typography 
-          noWrap
-          component="h1" 
-          variant="h5"
-          fontWeight="semibold"
-          fontSize={24}
-          color={colors.primary}
-        >
-          Dashboard
-        </Typography>
-        <Typography 
-          noWrap
-          component="h1" 
-          variant="h5"
-          fontWeight="light"
-          fontSize={18}
-          color={colors.primary}
-        >
-          En construcción
-        </Typography>
-        <Button
-          variant="contained"
-          onClick={() => { }}
-          sx = {{ my: 2 }}
-        >
-          Ir al inicio de sesión
-        </Button>
+        <HomeSection/>
       </div>
       <div id="hardware-section">
         <LoginForm/>

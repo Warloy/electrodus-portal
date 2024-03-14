@@ -14,6 +14,11 @@ import { colors } from "./constants/Colors";
 import './App.css'
 
 const mainTheme = createTheme({
+  typography: {
+    button: {
+      textTransform: "none",
+    }
+  },
   palette:{
     background: {
       default: colors.primary,
