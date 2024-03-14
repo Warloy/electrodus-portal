@@ -1,15 +1,16 @@
 
 import { useNavigate } from 'react-router-dom';
 import { Typography, 
-  Card, 
-  Button} from '@mui/material';
+  Button,
+  Box} from '@mui/material';
 import { colors } from '../constants/Colors';
 
 export default function HomePage() {
   const navigate = useNavigate()
 
   return (
-    <Card
+    <Box
+      flex= {1}
       sx={{
         boxShadow: 0,
         padding: 6,
@@ -49,6 +50,6 @@ export default function HomePage() {
       >
         Ir al inicio de sesión
       </Button>
-    </Card>
+    </Box>
   );
 }

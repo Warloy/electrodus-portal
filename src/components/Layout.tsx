@@ -1,5 +1,5 @@
 /* import { useLocation } from "react-router-dom"; Deprecated by the appselector hook */
-import { Box, Card } from "@mui/material";
+import { Box } from "@mui/material";
 import { NavBar } from "./NavBar"
 import { ILayoutProps } from "../interfaces/Layout.Interface"
 import { colors } from "../constants/Colors";
@@ -7,9 +7,9 @@ import { colors } from "../constants/Colors";
 export function Layout ( { children } : ILayoutProps) {
 
   return (
-    <Box sx = {{ position: "relative", display: "flex", width: "100vw", minHeight: "100vh" }}>
+    <Box sx = {{ m: "auto", position: "relative", display: "flex", width: "100vw", minHeight: "100vh" }}>
       <NavBar hidden={false}/>
-      <Card
+      <Box
         component="main"
         sx={{
           mt:6.5,
@@ -24,7 +24,7 @@ export function Layout ( { children } : ILayoutProps) {
         }}
       >
           {children}
-      </Card>
+      </Box>
     </Box>
   );
 }
