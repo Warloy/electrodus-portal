@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { AppBar, Box, IconButton, Toolbar, Typography, Menu, MenuItem, Button } from "@mui/material";
+import { AppBar, Box, IconButton, Toolbar, Typography, Menu, MenuItem, Button, Divider } from "@mui/material";
 import { INavBarProps } from "../interfaces/NavBar.Interface";
 import { colors } from "../constants/Colors";
+import { dummyAssets } from "../constants/DummyAssets";
 /* Icons */
 import HardwareIcon from '@mui/icons-material/Hardware';
 import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
@@ -9,7 +10,6 @@ import RedeemIcon from '@mui/icons-material/Redeem';
 import InfoIcon from '@mui/icons-material/Info';
 import KeyIcon from '@mui/icons-material/Key';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import DashboardIcon from '@mui/icons-material/Dashboard';
  
 
 export function NavBar( { hidden = false } : INavBarProps) {
@@ -76,6 +76,28 @@ export function NavBar( { hidden = false } : INavBarProps) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+
+      <MenuItem
+        onClick = {() => { handleLoginButton() 
+          handleMobileMenuClose()
+        }}
+      >
+        <IconButton
+          size="large"
+          aria-label="Iniciar sesión"
+        >
+          <KeyIcon sx={{ color: colors.primary }} />
+        </IconButton>
+        <Typography
+          color={colors.primary}
+          sx = {{ mr: 2 }}
+        >
+          Iniciar sesión
+        </Typography>
+      </MenuItem>
+
+      <Divider sx={{ mx: 2 }}/>
+
       <MenuItem
         onClick = {() => { handleHarwareButton() 
           handleMobileMenuClose()
@@ -152,25 +174,6 @@ export function NavBar( { hidden = false } : INavBarProps) {
         </Typography>
       </MenuItem>
 
-      
-      <MenuItem
-        onClick = {() => { handleLoginButton() 
-          handleMobileMenuClose()
-        }}
-      >
-        <IconButton
-          size="large"
-          aria-label="Iniciar sesión"
-        >
-          <KeyIcon sx={{ color: colors.primary }} />
-        </IconButton>
-        <Typography
-          color={colors.primary}
-          sx = {{ mr: 2 }}
-        >
-          Iniciar sesión
-        </Typography>
-      </MenuItem>
     </Menu>
   );
 
@@ -198,8 +201,10 @@ export function NavBar( { hidden = false } : INavBarProps) {
           }}
           >
             <Button variant="text" onClick={()=>{handleHomeButton()}}>
-              <DashboardIcon 
-                sx={{ width:36, height:36, color: colors.quaternary}}
+              <Box 
+                component="img"
+                src={dummyAssets.logoMini.quaternary}
+                sx={{ width:36, height:36 }}
               />
               <Typography
                 component="h1"
