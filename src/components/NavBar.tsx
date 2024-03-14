@@ -176,7 +176,7 @@ export function NavBar( { hidden = false } : INavBarProps) {
       {!hidden && <>
         <AppBar position="fixed" enableColorOnDark sx={{ 
           backgroundColor: colors.primary,
-          width: `calc(100% - 240px)`,
+          width: `100%`,
           ml: "240px"
           }}>
         <Toolbar

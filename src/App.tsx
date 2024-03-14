@@ -25,8 +25,8 @@ import './App.css'
 
 const mainTheme = createTheme({
   palette:{
-    background:{
-      default: colors.background
+    background: {
+      default: colors.primary,
     },
     primary:{
       main: colors.primary
