@@ -14,7 +14,7 @@ const HomeSection = () => {
         padding: 0,
         m: "auto",
         minWidth: "100vw",
-        minHeight: "100vh",
+        minHeight: "95vh",
         position: "relative",
         display: "flex",
         flexDirection: "row",
@@ -38,7 +38,7 @@ const HomeSection = () => {
       />
       <Box
         sx = {{
-          minHeight: "98vh",
+          minHeight: "95vh",
           minWidth: "98vw",
           position: "absolute",
           zIndex: 2,

@@ -14,6 +14,12 @@ export const colors = {
   gray5: "#111111",
   white: "#FFFFFF",
   transparent: "rgba(0,0,0,0%)",
+  shadow: {
+    p10: "rgba(0,0,0,10%)",
+    p25: "rgba(0,0,0,25%)",
+    p30: "rgba(0,0,0,30%)",
+    p50: "rgba(0,0,0,50%)",
+  }, 
   error: {
     primary: "#d95f5f",
     secondary: "#f52556",

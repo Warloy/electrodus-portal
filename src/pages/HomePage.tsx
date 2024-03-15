@@ -1,9 +1,6 @@
-import { Typography, 
-  Button,
-  Box} from '@mui/material';
-import { colors } from '../constants/Colors';
-import LoginForm from '../components/LoginComponents/LoginForm';
-import HomeSection from '../components/SectionComponents/HomeSection';
+import { Box } from "@mui/material";
+import HomeSection from "../components/SectionComponents/HomeSection";
+import HardwareSection from "../components/SectionComponents/HardwareSection";
 
 export default function HomePage() {
 
@@ -26,16 +23,16 @@ export default function HomePage() {
         <HomeSection/>
       </div>
       <div id="hardware-section">
-        <LoginForm/>
+        <HardwareSection/>
       </div>
       <div id="services-section">
-        <LoginForm/>
+        <HomeSection/>
       </div>
       <div id="promotions-section">
-        <LoginForm/>
+        <HomeSection/>
       </div>
       <div id="contact-section">
-        <LoginForm/>
+        <HomeSection/>
       </div>
     </Box>
   );
