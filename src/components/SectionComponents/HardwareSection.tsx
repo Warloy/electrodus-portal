@@ -27,7 +27,7 @@ const HardwareSection = () => {
           component="img"
           sx={{
             minHeight: { xs:"0%", sm:"0%", md: "75%", lg: "90%" },
-            maxWidth: { xs:"0%", sm:"0%", md: "40%", lg: "50%" },
+            maxWidth: { xs:"0%", sm:"0%", md: "55%", lg: "50%" },
             zIndex: 1,
             left: 0,
             position: "absolute"
@@ -49,8 +49,7 @@ const HardwareSection = () => {
           sx={{
             p: 3,
             my: 1,
-            minWidth: "30vw",
-            maxWidth: "50vw",
+            minWidth: { xs: "97.5vw", md: "45vw" },
             boxShadow: 0,
             right: 0,
             backgroundColor: colors.primary,
@@ -64,36 +63,17 @@ const HardwareSection = () => {
               alignItems: "center"
             }}
           >
-            <Box 
-                component="img"
-                sx={{
-                  m: 2,
-                  maxWidth: "35%",
-                }}
-                src={dummyAssets.logoMini.white}
-            />
             <Box>
-              <Typography 
-                component="h1" 
-                variant="caption"
-                fontWeight="bold"
-                align="left"
-                lineHeight={1}
-                fontSize={{ xs:24, sm: 36, md: 48 }}
-                color={colors.white}
-              >
-                  PROMETHEUS SOLUTIONS:
-              </Typography>
               <Typography 
                 component="h1" 
                 variant="h6"
                 fontWeight="bold"
                 align="left"
                 lineHeight={1}
-                fontSize={{ xs:16, sm: 24, md: 36 }}
+                fontSize={{ xs:20, sm: 24, md: 36 }}
                 color={colors.white}
               >
-                  MANTENIMIENTO HECHO A TU MEDIDA
+                  Catálogo de equipos
               </Typography>
             </Box>
           </Box>
@@ -105,10 +85,10 @@ const HardwareSection = () => {
               variant="h1"
               align="left"
               lineHeight={1}
-              fontSize={{ xs:12, sm: 18, md: 24 }}
+              fontSize={{ xs:18, sm: 18, md: 24 }}
               color={colors.white}
             >
-                Prometheus Solutions se compromete, a través del sistema Electrodus, a darte la mejor atención de mantenimiento disponible en el mercado. <br/> ¡Descarga ya nuestra aplicación, y comienza a solucionar!
+              Revisa el catálogo de equipos admitidos
             </Typography>
           </Box>
           <Box sx={{ mt: 1,
@@ -125,7 +105,7 @@ const HardwareSection = () => {
                 fontSize: {xs: 12, sm: 14, md: 18, lg: 18 }
               }}
             >
-              Iniciar sesión
+              Placeholder
             </Button>
             <Button
               fullWidth
@@ -138,7 +118,7 @@ const HardwareSection = () => {
                 fontSize: {xs: 12, sm: 14, md: 18, lg: 18 }
               }}
             >
-              Descargar la app
+              Placeholder
             </Button>
           </Box>
         </Card>

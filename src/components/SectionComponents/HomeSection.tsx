@@ -49,10 +49,10 @@ const HomeSection = () => {
       >
         <Card
           sx={{
-            ml: { xs: 15, sm: 20 },
+            mx: { xs: 2, sm: 20 },
             mt: { xs: 5, sm: 10 },
-            minWidth: "30vw",
-            maxWidth: "40vw",
+            minWidth: { sm: "97.5vw", md: "40vw" },
+            maxWidth: { sm: "97.5vw", md: "40vw" },
             padding: 0,
             boxShadow: 0,
             backgroundColor: colors.transparent,
@@ -84,7 +84,7 @@ const HomeSection = () => {
                 fontSize={{ xs:24, sm: 36, md: 48 }}
                 color={colors.white}
               >
-                  PROMETHEUS SOLUTIONS:
+                  PROMETHEUS SOLUTIONS
               </Typography>
               <Typography 
                 component="h1" 
@@ -94,20 +94,21 @@ const HomeSection = () => {
                 lineHeight={1}
                 fontSize={{ xs:16, sm: 24, md: 36 }}
                 color={colors.white}
+                sx={{ mt: 1 }}
               >
                   MANTENIMIENTO HECHO A TU MEDIDA
               </Typography>
             </Box>
           </Box>
           <Box
-            sx={{ mt: 2 }}
+            sx={{ mt: 2, mx: 2 }}
           >
             <Typography 
               component="h1" 
               variant="h1"
               align="left"
               lineHeight={1}
-              fontSize={{ xs:12, sm: 18, md: 24 }}
+              fontSize={{ xs:18, sm: 18, md: 24 }}
               color={colors.white}
             >
                 Prometheus Solutions se compromete, a través del sistema Electrodus, a darte la mejor atención de mantenimiento disponible en el mercado. <br/> ¡Descarga ya nuestra aplicación, y comienza a solucionar!
