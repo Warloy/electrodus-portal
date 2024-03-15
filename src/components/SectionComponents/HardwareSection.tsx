@@ -26,7 +26,7 @@ const HardwareSection = () => {
       <Box 
           component="img"
           sx={{
-            minHeight: { xs:"0%", sm:"0%", md: "75%", lg: "90%" },
+            minHeight: { xs:"0%", sm:"0%", md: "60%", lg: "75%" },
             maxWidth: { xs:"0%", sm:"0%", md: "55%", lg: "50%" },
             zIndex: 1,
             left: 0,
@@ -52,7 +52,7 @@ const HardwareSection = () => {
             minWidth: { xs: "97.5vw", md: "45vw" },
             boxShadow: 0,
             right: 0,
-            backgroundColor: colors.primary,
+            backgroundColor: {xs: colors.shadow.p50, md:colors.shadow.primaryAlpha80},
             zIndex: 2,
             overflow: "auto"
           }}
