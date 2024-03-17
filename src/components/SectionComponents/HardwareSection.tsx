@@ -49,7 +49,7 @@ const HardwareSection = () => {
           sx={{
             p: 3,
             my: 1,
-            minWidth: { xs: "97.5vw", md: "45vw" },
+            minWidth: { xs: "97.5vw", md: "49vw" },
             boxShadow: 0,
             right: 0,
             backgroundColor: {xs: colors.shadow.p50, md:colors.shadow.primaryAlpha80},

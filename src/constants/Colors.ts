@@ -19,6 +19,7 @@ export const colors = {
     p25: "rgba(0,0,0,25%)",
     p30: "rgba(0,0,0,30%)",
     p50: "rgba(0,0,0,50%)",
+    p80: "rgba(0,0,0,80%)",
     primaryAlpha80: "rgba(61,56,82,80%)"
   }, 
   error: {

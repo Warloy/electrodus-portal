@@ -1,6 +1,9 @@
 import { Box } from "@mui/material";
 import HomeSection from "../components/SectionComponents/HomeSection";
 import HardwareSection from "../components/SectionComponents/HardwareSection";
+import ServicesSection from "../components/SectionComponents/ServicesSection";
+import PromotionsSection from "../components/SectionComponents/PromotionsSection";
+import ContactSection from "../components/SectionComponents/ContactSection";
 
 export default function HomePage() {
 
@@ -26,13 +29,13 @@ export default function HomePage() {
         <HardwareSection/>
       </div>
       <div id="services-section">
-        <HomeSection/>
+        <ServicesSection/>
       </div>
       <div id="promotions-section">
-        <HomeSection/>
+        <PromotionsSection/>
       </div>
       <div id="contact-section">
-        <HomeSection/>
+        <ContactSection/>
       </div>
     </Box>
   );

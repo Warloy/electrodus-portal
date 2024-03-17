@@ -1,17 +1,21 @@
 export const dummyAssets = {
-  background: "https://cdn.discordapp.com/attachments/1037541208731422772/1217975706600869929/gradient.png?ex=6605fb45&is=65f38645&hm=b804ccfa2fb6c06686772874d2ae98291c7b0081a2c0b356f5ad344877a58ac2&",
+  background: "https://firebasestorage.googleapis.com/v0/b/fioxin.appspot.com/o/assets%2Fgradient.png?alt=media&token=71bdc9a9-239c-4d12-abb8-86d8083de50f",
   logo: {
-    white: "https://cdn.discordapp.com/attachments/1037541208731422772/1217880655409709076/logo-white.png?ex=6605a2bf&is=65f32dbf&hm=fccb8e32b26c4b40af158e3ee04f91315599837d159e9c32474f332c3ae611d8&"
+    white: "https://firebasestorage.googleapis.com/v0/b/fioxin.appspot.com/o/Empresa%2Flogo-white.png?alt=media&token=632f680b-1164-4338-b47c-047d3c9b2349"
   },
   logoMini: {
-    white: "https://cdn.discordapp.com/attachments/1037541208731422772/1217881852870660116/Logo_mini_white.png?ex=6605a3dc&is=65f32edc&hm=60f81cf0ec5377da6193461e0372e35d268e424ef4ddedf83e46acaf06514971&",
-    quaternary: "https://cdn.discordapp.com/attachments/1037541208731422772/1217883131349045288/Logo_mini_quaternary.png?ex=6605a50d&is=65f3300d&hm=139012707da7c024271135dc3abf7d30b5c92e3f2ab97fd3914c31b6528cea58&"
+    white: "https://firebasestorage.googleapis.com/v0/b/fioxin.appspot.com/o/Empresa%2Fimagen.png?alt=media&token=522bbd2e-07dd-419a-87e7-4504b4e0721f",
+    quaternary: "https://firebasestorage.googleapis.com/v0/b/fioxin.appspot.com/o/Empresa%2Flogo.png?alt=media&token=ada9ae2e-b59b-40ce-bfba-49d3df03b189"
   },
-  landingSplash: "https://cdn.discordapp.com/attachments/1037541208731422772/1217959900316041398/1708469862414cut.png?ex=6605ec8c&is=65f3778c&hm=a4e3ab0cc87ae10151610578fd654667a282a6fe136297705e7208b5d734deb5&",
+  landingSplash: "https://firebasestorage.googleapis.com/v0/b/fioxin.appspot.com/o/assets%2Fasset1.png?alt=media&token=9206b4cc-e861-4823-b5d2-830686c7d9b5",
   sectionImages: {
-    hardware: "https://images.samsung.com/is/image/samsung/p6pim/latin/ne63a8711qn-aa/gallery/latin-ne9000t-ne63a8711qn-aa-534005763?$684_547_PNG$",
-    services: "",
-    promotions: "",
-    contact: "",
+    hardware: "https://firebasestorage.googleapis.com/v0/b/fioxin.appspot.com/o/assets%2Fasset8.webp?alt=media&token=056b66f4-6999-4055-a904-d54727e0632a",
+    services: "https://firebasestorage.googleapis.com/v0/b/fioxin.appspot.com/o/assets%2Fasset5.png?alt=media&token=99417b80-48a4-4910-bbe1-f2c2d11127bf",
+    promotions: "https://firebasestorage.googleapis.com/v0/b/fioxin.appspot.com/o/assets%2Fasset6.webp?alt=media&token=c8dcbfef-0225-4b6e-a3b7-ec9d830c6fc7",
+    contact: {
+      splash: "https://firebasestorage.googleapis.com/v0/b/fioxin.appspot.com/o/assets%2Fasset7.webp?alt=media&token=309609c3-0244-49ec-9cfb-ac287fffbdbd",
+      whatsAppButton: "https://firebasestorage.googleapis.com/v0/b/fioxin.appspot.com/o/assets%2Fasset2.png?alt=media&token=db691151-f30b-401a-a21a-37daff67d3f2",
+      googlePlayButton: "https://firebasestorage.googleapis.com/v0/b/fioxin.appspot.com/o/assets%2Fasset3.png?alt=media&token=0b148646-79bc-4388-911a-257d452ce9f9",
+    },
   }
 }
