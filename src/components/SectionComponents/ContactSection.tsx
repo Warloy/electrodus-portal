@@ -66,8 +66,9 @@ const ContactSection = () => {
             sx={{ 
               display: "flex",
               flexDirection: "column", 
-              minHeight: "15vh", 
-              maxHeight: "15vh" 
+              minHeight: "12vh",
+              maxHeight: "12vh",
+              justifyContent: "center"
             }}
           >
             <Typography 
@@ -81,26 +82,14 @@ const ContactSection = () => {
             >
                 Conoce sobre Prometheus Solutions
             </Typography>
-            <Typography 
-              component="h1" 
-              variant="h1"
-              align="center"
-              lineHeight={1}
-              fontSize={{ xs:18, sm: 18, md: 24 }}
-              color={colors.white}
-              sx ={{ mt: 2 }}
-            >
-              Historia de la empresa bio y vaina.
-            </Typography>
           </Box>
           <Box
             sx={{ 
-              mt: 2,
               display: "flex", 
               flexDirection: "row",
               justifyContent: "space-between",
-              minHeight: "20vh", 
-              maxHeight: "20vh" 
+              minHeight: "25vh",
+              maxHeight: "25vh"
             }}
           >
             <Card
