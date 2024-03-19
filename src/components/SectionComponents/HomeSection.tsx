@@ -4,9 +4,20 @@ import { Button,
   Card } from "@mui/material";
 import { colors } from "../../constants/Colors";
 import { dummyAssets } from "../../constants/DummyAssets";
+import { TCompany } from "../../types/Company.Type";
 
 
-const HomeSection = () => {
+const HomeSection = ( { company }: {company: TCompany} ) => {
+  const LOGIN_URL = import.meta.env.VITE_ELECTRODUS_LOGIN_URL
+  const APPDL_URL = import.meta.env.VITE_ELECTRODUS_APPDL_URL
+  
+  const handleLoginButton = () => {
+    location.href=LOGIN_URL
+  };
+
+  const handleDownloadAPPButton = () => {
+    location.href=APPDL_URL
+  }
 
   return (
     <Box
@@ -72,7 +83,7 @@ const HomeSection = () => {
                   m: 2,
                   maxWidth: "35%",
                 }}
-                src={dummyAssets.logoMini.white}
+                src={company.urlImage}
             />
             <Box>
               <Typography 
@@ -84,7 +95,7 @@ const HomeSection = () => {
                 fontSize={{ xs:24, sm: 36, md: 48 }}
                 color={colors.white}
               >
-                  PROMETHEUS SOLUTIONS
+                  {company.name?.toUpperCase()}
               </Typography>
               <Typography 
                 component="h1" 
@@ -96,7 +107,7 @@ const HomeSection = () => {
                 color={colors.white}
                 sx={{ mt: 1 }}
               >
-                  MANTENIMIENTO HECHO A TU MEDIDA
+                  {company.slogan?.toUpperCase()}
               </Typography>
             </Box>
           </Box>
@@ -120,8 +131,7 @@ const HomeSection = () => {
             <Button
               fullWidth
               variant="contained"
-              onClick={()=>{
-                }}
+              onClick={()=>{ handleLoginButton() }}
               sx={{ mt: 3, mb: 2, mx: 1, py: 1, 
                 borderRadius: 3, 
                 backgroundColor: colors.tertiary, 
@@ -133,8 +143,7 @@ const HomeSection = () => {
             <Button
               fullWidth
               variant="contained"
-              onClick={()=>{
-                }}
+              onClick={()=>{ handleDownloadAPPButton() }}
               sx={{ mt: 3, mb: 2, mx: 1, py: 1, 
                 borderRadius: 3, 
                 backgroundColor: colors.tertiary, 

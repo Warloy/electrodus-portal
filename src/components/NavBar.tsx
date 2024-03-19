@@ -13,6 +13,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
  
 
 export function NavBar( { hidden = false } : INavBarProps) {
+  const LOGIN_URL = import.meta.env.VITE_ELECTRODUS_LOGIN_URL
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     useState<null | HTMLElement>(null);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -44,7 +45,7 @@ export function NavBar( { hidden = false } : INavBarProps) {
   };
 
   const handleLoginButton = () => {
-    location.href="http://youtube.com"
+    location.href=LOGIN_URL
   };
 
   const handlePromotionsButton = () => {

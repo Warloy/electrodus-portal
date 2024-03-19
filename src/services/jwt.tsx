@@ -7,7 +7,7 @@ import { SESSION_KEY } from "../constants/Session";
  * @param {String} token User token value.
  * @param {Object} user User object. Brings attributes from the table. 
  */
-export const setSession = async (session: TSession) => {
+export const setSession = async (session: TSession): Promise<void> => {
   try {
 
     const [ID_KEY, TOKEN_KEY] = SESSION_KEY;

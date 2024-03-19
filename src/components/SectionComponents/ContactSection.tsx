@@ -1,12 +1,23 @@
 import { Box,
   Typography, 
   Card, 
-  IconButton} from "@mui/material";
+  IconButton } from "@mui/material";
 import { colors } from "../../constants/Colors";
 import { dummyAssets } from "../../constants/DummyAssets";
+import { TCompany } from "../../types/Company.Type";
 
 
-const ContactSection = () => {
+const ContactSection = ( { company }: {company: TCompany} ) => {
+  const APPDL_URL = import.meta.env.VITE_ELECTRODUS_APPDL_URL
+  const CHATBOT_URL = import.meta.env.VITE_ELECTRODUS_CHATBOT_URL
+  
+  const handleDownloadAPPButton = () => {
+    location.href=APPDL_URL
+  }
+
+  const handleChatbotButton = () => {
+    location.href=CHATBOT_URL
+  }
 
   return (
     <Box
@@ -46,7 +57,7 @@ const ContactSection = () => {
       >
         <Card
           sx={{
-            p: 3,
+            p: 1,
             my: 2,
             mx: 2,
             minWidth: { xs: "94vw", md: "85%" },
@@ -59,15 +70,16 @@ const ContactSection = () => {
             alignSelf: "center",
             position: "relative",
             display: "flex",
-            flexDirection: "column"
+            flexDirection: "column",
+            justifyContent: "space-between"
           }}
         >
           <Box
             sx={{ 
               display: "flex",
               flexDirection: "column", 
-              minHeight: "12vh",
-              maxHeight: "12vh",
+              minHeight: "8vh",
+              maxHeight: "8vh",
               justifyContent: "center"
             }}
           >
@@ -80,118 +92,110 @@ const ContactSection = () => {
               fontSize={{ xs:20, sm: 24, md: 32 }}
               color={colors.white}
             >
-                Conoce sobre Prometheus Solutions
+                Conoce sobre {company.name}
             </Typography>
           </Box>
           <Box
             sx={{ 
               display: "flex", 
               flexDirection: "row",
-              justifyContent: "space-between",
-              minHeight: "25vh",
-              maxHeight: "25vh"
+              justifyContent: "space-evenly",
+              minHeight: "35vh",
+              maxHeight: "35vh",
+              mx: 2,
+              mb: 2
             }}
           >
             <Card
               sx={{
                 display: "flex",
                 flexDirection:"column",
-                justifyContent: "space-evenly",
-                p: 3,
-                my: 1,
-                mx: 2,
-                minWidth: "40%",
-                maxWidth: "40%",
-                minHeight: "25vh",
-                maxHeight: "25vh",
+                justifyContent: "flex-start",
+                px: 1,
+                mt: 1,
+                mb: 2,
+                minWidth: "45%",
+                maxWidth: "45%",
+                minHeight: "35vh",
+                maxHeight: "35vh",
                 boxShadow: 0,
                 backgroundColor: colors.transparent,
                 zIndex: 2,
                 alignSelf: "center"
               }}
             >
-              <Box
-                sx={{ mb: 2,
-                  display: "flex",
-                  alignItems: "center",
-                  alignSelf: "center"
-                }}
+              <Typography 
+                component="h1" 
+                variant="h6"
+                fontWeight="bold"
+                align="center"
+                lineHeight={1}
+                fontSize={{ xs:20, sm: 24, md: 32 }}
+                color={colors.white}
               >
-                <Box>
-                  <Typography 
-                    component="h1" 
-                    variant="h6"
-                    fontWeight="bold"
-                    align="center"
-                    lineHeight={1}
-                    fontSize={{ xs:20, sm: 24, md: 32 }}
-                    color={colors.white}
-                  >
-                      Misión
-                  </Typography>
-                  <Typography 
-                    component="h1" 
-                    variant="h1"
-                    align="center"
-                    lineHeight={1}
-                    fontSize={{ xs:14, sm: 16, md: 20 }}
-                    color={colors.white}
-                    sx ={{ mt: 2 }}
-                  >
-                    Aquí debe salir la misión de la empresa.
-                  </Typography>
-                </Box>
+                  Misión
+              </Typography>
+                <Box
+                sx={{ my: 2 }}
+              >
+                <Typography 
+                  component="h1" 
+                  variant="h1"
+                  align="justify"
+                  lineHeight={1}
+                  fontSize={{ xs:14, sm: 16, md: 20 }}
+                  color={colors.white}
+                  sx ={{ mt: 2 }}
+                  overflow={{ xs: "auto", lg: "hidden" }} 
+                >
+                  {company.mission}
+                </Typography>
               </Box>
             </Card>
             <Card
               sx={{
                 display: "flex",
                 flexDirection:"column",
-                justifyContent: "space-evenly",
-                p: 3,
-                my: 1,
-                mx: 2,
-                minWidth: "40%",
-                maxWidth: "40%",
-                minHeight: "25vh",
-                maxHeight: "25vh",
+                justifyContent: "flex-start",
+                px: 1,
+                mt: 1,
+                mb: 2,
+                minWidth: "45%",
+                maxWidth: "45%",
+                minHeight: "35vh",
+                maxHeight: "35vh",
                 boxShadow: 0,
                 backgroundColor: colors.transparent,
                 zIndex: 2,
                 alignSelf: "center"
               }}
             >
-              <Box
-                sx={{ mb: 2,
-                  display: "flex",
-                  alignItems: "center",
-                  alignSelf: "center"
-                }}
+              <Typography 
+                component="h1" 
+                variant="h6"
+                fontWeight="bold"
+                align="center"
+                lineHeight={1}
+                fontSize={{ xs:20, sm: 24, md: 32 }}
+                color={colors.white}
               >
-                <Box>
-                  <Typography 
-                    component="h1" 
-                    variant="h6"
-                    fontWeight="bold"
-                    align="center"
-                    lineHeight={1}
-                    fontSize={{ xs:20, sm: 24, md: 32 }}
-                    color={colors.white}
-                  >
-                      Visión
-                  </Typography>
-                  <Typography 
-                    component="h1" 
-                    variant="h1"
-                    align="center"
-                    lineHeight={1}
-                    fontSize={{ xs:14, sm: 16, md: 20 }}
-                    color={colors.white}
-                    sx ={{ mt: 2 }}
-                  >
-                    Aquí debe salir la visión de la empresa.
-                  </Typography>
-                </Box>
+                  Visión
+              </Typography>
+                <Box
+                sx={{ my: 2 }}
+              >
+                <Typography 
+                  component="h1" 
+                  variant="h1"
+                  align="justify"
+                  lineHeight={1}
+                  fontSize={{ xs:14, sm: 16, md: 20 }}
+                  color={colors.white}
+                  sx ={{ mt: 2 }}
+                  overflow={{ xs: "auto", lg: "hidden" }} 
+                >
+                  {company.vision}
+                </Typography>
               </Box>
             </Card>
           </Box>
@@ -268,8 +272,7 @@ const ContactSection = () => {
               justifyContent: "center"
             }}>
               <IconButton
-                onClick={()=>{
-                  }}
+                onClick={()=>{ handleDownloadAPPButton() }}
                 sx={{ 
                   borderRadius: 0, 
                   fontSize: {xs: 12, sm: 14, md: 18, lg: 18 },
@@ -345,8 +348,7 @@ const ContactSection = () => {
               justifyContent: "center"
             }}>
               <IconButton
-                onClick={()=>{
-                  }}
+                onClick={()=>{ handleChatbotButton() }}
                 sx={{ 
                   borderRadius: 0, 
                   fontSize: {xs: 12, sm: 14, md: 18, lg: 18 },
