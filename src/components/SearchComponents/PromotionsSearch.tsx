@@ -69,7 +69,7 @@ export function PromotionsSearch () {
         }}
       >
         <TextField
-          id="service-search"
+          id="promotions-search"
           label="Buscar promociones"
           type="search"
           variant="outlined"
