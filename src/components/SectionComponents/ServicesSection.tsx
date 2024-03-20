@@ -1,9 +1,12 @@
-import { Button,
+import {
   Box,
   Typography, 
-  Card } from "@mui/material";
+  Card, 
+  Divider
+} from "@mui/material";
 import { colors } from "../../constants/Colors";
 import { dummyAssets } from "../../constants/DummyAssets";
+import { HardwareSearch } from "../SearchComponents/HardwareSearch";
 
 
 const ServicesSection = () => {
@@ -44,41 +47,38 @@ const ServicesSection = () => {
           justifyContent: "flex-start"
         }}
       >
+        
         <Card
           sx={{
             p: 3,
-            my: 1,
+            mt: 1,
+            mb: 2,
+            ml: { xs: 0, md: 1, lg: 0 },
             minWidth: { xs: "97.5vw", md: "49vw" },
             boxShadow: 0,
             right: 0,
             backgroundColor: {xs: colors.transparent, md:colors.shadow.p50},
             zIndex: 2,
-            overflow: "auto"
           }}
         >
           <Box
-            sx={{ mb: 2,
+            sx={{ mb: 1,
               display: "flex",
-              alignItems: "center"
+              flexDirection: "column",
+              alignItems: "flex-start"
             }}
           >
-            <Box>
-              <Typography 
-                component="h1" 
-                variant="h6"
-                fontWeight="bold"
-                align="left"
-                lineHeight={1}
-                fontSize={{ xs:20, sm: 24, md: 36 }}
-                color={colors.white}
-              >
-                  Nuestros servicios
-              </Typography>
-            </Box>
-          </Box>
-          <Box
-            sx={{ mt: 2 }}
-          >
+            <Typography 
+              component="h1" 
+              variant="h6"
+              fontWeight="bold"
+              align="left"
+              lineHeight={1}
+              fontSize={{ xs:20, sm: 24, md: 36 }}
+              color={colors.white}
+            >
+                Nuestros servicios
+            </Typography>
             <Typography 
               component="h1" 
               variant="h1"
@@ -90,36 +90,14 @@ const ServicesSection = () => {
               Estas son las opciones que te ofrecemos
             </Typography>
           </Box>
-          <Box sx={{ mt: 1,
-            display: "flex"
-          }}>
-            <Button
-              fullWidth
-              variant="contained"
-              onClick={()=>{
-                }}
-              sx={{ mt: 3, mb: 2, mx: 1, py: 1, 
-                borderRadius: 3, 
-                backgroundColor: colors.tertiary, 
-                fontSize: {xs: 12, sm: 14, md: 18, lg: 18 }
-              }}
-            >
-              Placeholder
-            </Button>
-            <Button
-              fullWidth
-              variant="contained"
-              onClick={()=>{
-                }}
-              sx={{ mt: 3, mb: 2, mx: 1, py: 1, 
-                borderRadius: 3, 
-                backgroundColor: colors.tertiary, 
-                fontSize: {xs: 12, sm: 14, md: 18, lg: 18 }
-              }}
-            >
-              Placeholder
-            </Button>
-          </Box>
+          <Divider 
+            variant="fullWidth"
+            sx={{
+              my: 2,
+              backgroundColor: colors.background
+            }}
+          />
+          <HardwareSearch/>
         </Card>
       </Box>
     </Box>

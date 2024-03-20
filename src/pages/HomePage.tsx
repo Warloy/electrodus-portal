@@ -33,10 +33,11 @@ export default function HomePage() {
       } else { 
         setCompany(dummyCompany);
       }
-      stopLoading();
     } catch (error: any) {
       setCompany(dummyCompany)
       console.log(error);
+    } finally { 
+      stopLoading() 
     }
   }
 

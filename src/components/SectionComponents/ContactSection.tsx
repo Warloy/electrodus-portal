@@ -71,15 +71,16 @@ const ContactSection = ( { company }: {company: TCompany} ) => {
             position: "relative",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between"
+            justifyContent: "space-around"
           }}
         >
           <Box
             sx={{ 
               display: "flex",
               flexDirection: "column", 
-              minHeight: "8vh",
-              maxHeight: "8vh",
+              my: 2,
+              minHeight: "6vh",
+              maxHeight: "6vh",
               justifyContent: "center"
             }}
           >
@@ -99,25 +100,24 @@ const ContactSection = ( { company }: {company: TCompany} ) => {
             sx={{ 
               display: "flex", 
               flexDirection: "row",
-              justifyContent: "space-evenly",
+              justifyContent: "space-around",
               minHeight: "35vh",
               maxHeight: "35vh",
               mx: 2,
-              mb: 2
             }}
           >
-            <Card
+            <Box
               sx={{
                 display: "flex",
                 flexDirection:"column",
                 justifyContent: "flex-start",
                 px: 1,
                 mt: 1,
-                mb: 2,
+                mb: 3,
                 minWidth: "45%",
                 maxWidth: "45%",
-                minHeight: "35vh",
-                maxHeight: "35vh",
+                minHeight: "32vh",
+                maxHeight: "32vh",
                 boxShadow: 0,
                 backgroundColor: colors.transparent,
                 zIndex: 2,
@@ -135,35 +135,31 @@ const ContactSection = ( { company }: {company: TCompany} ) => {
               >
                   Misión
               </Typography>
-                <Box
-                sx={{ my: 2 }}
-              >
-                <Typography 
+              <Typography 
                   component="h1" 
                   variant="h1"
                   align="justify"
                   lineHeight={1}
                   fontSize={{ xs:14, sm: 16, md: 20 }}
                   color={colors.white}
-                  sx ={{ mt: 2 }}
+                  sx ={{ mt: 2, pr: 1 }}
                   overflow={{ xs: "auto", lg: "hidden" }} 
                 >
                   {company.mission}
                 </Typography>
-              </Box>
-            </Card>
-            <Card
+            </Box>
+            <Box
               sx={{
                 display: "flex",
                 flexDirection:"column",
                 justifyContent: "flex-start",
                 px: 1,
                 mt: 1,
-                mb: 2,
+                mb: 3,
                 minWidth: "45%",
                 maxWidth: "45%",
-                minHeight: "35vh",
-                maxHeight: "35vh",
+                minHeight: "32vh",
+                maxHeight: "32vh",
                 boxShadow: 0,
                 backgroundColor: colors.transparent,
                 zIndex: 2,
@@ -181,23 +177,19 @@ const ContactSection = ( { company }: {company: TCompany} ) => {
               >
                   Visión
               </Typography>
-                <Box
-                sx={{ my: 2 }}
-              >
-                <Typography 
+              <Typography 
                   component="h1" 
                   variant="h1"
                   align="justify"
                   lineHeight={1}
                   fontSize={{ xs:14, sm: 16, md: 20 }}
                   color={colors.white}
-                  sx ={{ mt: 2 }}
+                  sx ={{ mt: 2, pr: 1 }}
                   overflow={{ xs: "auto", lg: "hidden" }} 
                 >
                   {company.vision}
                 </Typography>
-              </Box>
-            </Card>
+            </Box>
           </Box>
         </Card>
         <Box

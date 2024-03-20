@@ -6,4 +6,5 @@ export type TCompany = {
   urlImage?: string;
   urlLogo?: string;
   slogan?: string;
+  description?: string;
 };

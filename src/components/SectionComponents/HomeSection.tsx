@@ -117,12 +117,12 @@ const HomeSection = ( { company }: {company: TCompany} ) => {
             <Typography 
               component="h1" 
               variant="h1"
-              align="left"
+              align="justify"
               lineHeight={1}
               fontSize={{ xs:18, sm: 18, md: 24 }}
               color={colors.white}
             >
-                Prometheus Solutions se compromete, a través del sistema Electrodus, a darte la mejor atención de mantenimiento disponible en el mercado. <br/> ¡Descarga ya nuestra aplicación, y comienza a solucionar!
+                {company.description}
             </Typography>
           </Box>
           <Box sx={{ mt: 1,
