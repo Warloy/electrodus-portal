@@ -5,7 +5,7 @@ import { Button,
   Divider} from "@mui/material";
 import { colors } from "../../constants/Colors";
 import { dummyAssets } from "../../constants/DummyAssets";
-import { HardwareSearch } from "../SearchComponents/HardwareSearch";
+import { PromotionsSearch } from "../SearchComponents/PromotionsSearch";
 
 
 const PromotionsSection = () => {
@@ -97,7 +97,7 @@ const PromotionsSection = () => {
               backgroundColor: colors.background
             }}
           />
-          <HardwareSearch/>
+          <PromotionsSearch/>
         </Card>
       </Box>
     </Box>

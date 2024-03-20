@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 import { colors } from "../../constants/Colors";
 import { dummyAssets } from "../../constants/DummyAssets";
-import { HardwareSearch } from "../SearchComponents/HardwareSearch";
+import { ServicesSearch } from "../SearchComponents/ServicesSearch";
 
 
 const ServicesSection = () => {
@@ -97,7 +97,7 @@ const ServicesSection = () => {
               backgroundColor: colors.background
             }}
           />
-          <HardwareSearch/>
+          <ServicesSearch/>
         </Card>
       </Box>
     </Box>
